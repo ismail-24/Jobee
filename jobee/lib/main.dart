@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jobee/pages/on_boarding_page.dart';
+import 'package:jobee/pages/splash_pages/splash_page.dart';
 
 void main() {
   runApp(const Jobee());
@@ -12,7 +12,7 @@ class Jobee extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingPage(),
+      home: SplashPage(),
     );
   }
 }
