@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobee/pages/login_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BottomOnBoardPage extends StatelessWidget {
@@ -37,9 +38,12 @@ class BottomOnBoardPage extends StatelessWidget {
           onTap: () {
             if (controller.page! < pages.length - 1) {
               controller.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.ease);
-            } else {}
+                duration: const Duration(milliseconds: 600),
+                curve: Curves.decelerate,
+              );
+            } else {
+              Navigator.pushNamed(context, LogInPage.id);
+            }
           },
           child: Container(
             padding: const EdgeInsets.only(top: 11, left: 11),

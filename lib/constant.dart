@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:jobee/pages/splash_pages/top_splash.dart';
+import 'package:jobee/pages/onboarding_pages/top_onboarding.dart';
 
 const List pages = [
   TopSplash(
-    imageName: 'assets/splash_images/firest_image.png',
+    imageName: 'assets/onboarding_images/firest_image.png',
     mainText: 'Get your first jop faster than\n you think ',
     secondaryText:
         'Accelerate Your Career Journey with jobee:\n Your Fast Track to Landing that Dream Job! ',
@@ -11,7 +11,7 @@ const List pages = [
     width: 238,
   ),
   TopSplash(
-    imageName: 'assets/splash_images/second_image.gif',
+    imageName: 'assets/onboarding_images/second_image.gif',
     mainText: 'Learn and explore and achieve\n new knowledege ',
     secondaryText:
         'On a level of learning and communication!\n Discover, ask, and connect ',
@@ -19,7 +19,7 @@ const List pages = [
     width: 280,
   ),
   TopSplash(
-    imageName: 'assets/splash_images/third_image.png',
+    imageName: 'assets/onboarding_images/third_image.png',
     mainText: 'We guarantee you the largest software companies ',
     secondaryText:
         'Discover job opportunities with the most prominent names in the business world.',
@@ -29,3 +29,5 @@ const List pages = [
 ];
 
 const Color kColor = Color(0xFF072AC8);
+var logo =
+    Container(width: 250, height: 90, child: Image.asset('assets/splash.png'));

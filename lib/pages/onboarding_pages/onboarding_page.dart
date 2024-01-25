@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:jobee/constant.dart';
-import 'package:jobee/pages/splash_pages/bottom_splash.dart';
+import 'package:jobee/pages/login_page.dart';
+import 'package:jobee/pages/onboarding_pages/bottom_onboarding.dart';
 
-class SplashPage extends StatefulWidget {
-  SplashPage({
+class OnBoardingPage extends StatefulWidget {
+  OnBoardingPage({
     super.key,
   });
+  static String id = 'SplashPage';
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _OnBoardingPageState extends State<OnBoardingPage> {
   final PageController controller = PageController();
 
   @override
@@ -35,7 +37,9 @@ class _SplashPageState extends State<SplashPage> {
         title: Align(
           alignment: Alignment.centerRight,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, LogInPage.id);
+            },
             child: const Text(
               'Skip',
               style: TextStyle(
