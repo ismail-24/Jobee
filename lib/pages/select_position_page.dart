@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/pages/junior_info/junior_info_page1.dart';
 import 'package:jobee/widgets/custom_button.dart';
+import 'package:jobee/widgets/position_choises.dart';
 
 class selectPositionPage extends StatelessWidget {
   const selectPositionPage({super.key});
@@ -80,76 +80,6 @@ class selectPositionPage extends StatelessWidget {
               text: 'Select',
               color: kColor,
               textColor: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class choises extends StatefulWidget {
-  const choises({
-    super.key,
-    required this.imagePath,
-    required this.text,
-  });
-  final String imagePath;
-  final String text;
-
-  @override
-  State<choises> createState() => _choisesState();
-}
-
-class _choisesState extends State<choises> {
-  String selectedChoice = '';
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Column(
-        children: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: ShapeDecoration(
-              color: selectedChoice == widget.text
-                  ? const Color(0xffE6EAFA)
-                  : Colors.white,
-              shape: const OvalBorder(),
-              shadows: const [
-                BoxShadow(
-                  color: Color(0x19000000),
-                  blurRadius: 5,
-                  offset: Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Center(
-              child: SvgPicture.asset(
-                widget.imagePath,
-                color: selectedChoice == widget.text
-                    ? const Color(0xff072AC8)
-                    : Color(0xff848484),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            widget.text,
-            style: TextStyle(
-              color: selectedChoice == widget.text
-                  ? const Color(0xFF090F24)
-                  : Color(0xFF626262),
-              fontSize: 12,
-              fontFamily: 'Montserrat',
-              fontWeight: selectedChoice == widget.text
-                  ? FontWeight.w700
-                  : FontWeight.w500,
-              height: 0,
             ),
           ),
         ],

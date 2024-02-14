@@ -29,8 +29,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           onPressed: () {
             if (controller.page! <= pages.length - 1) {
               controller.previousPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.ease);
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
             }
           },
         ),

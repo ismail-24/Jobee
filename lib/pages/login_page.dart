@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
-import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/pages/sign_up_page.dart';
+import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:jobee/widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_check_box.dart';
 import 'package:jobee/widgets/custom_text_form_field.dart';
@@ -15,28 +15,34 @@ class LogInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 65,
+            SizedBox(
+              height: screenSize.height * 0.1,
             ),
             Center(
-              child: logo,
+              child: SizedBox(
+                width: screenSize.width * 0.8,
+                child: logo,
+              ),
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: screenSize.height * 0.08,
             ),
-            const Row(
+            Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: screenSize.width * 0.04),
                   child: Text(
                     'Log in now',
                     style: TextStyle(
-                      color: Color(0xFF090F24),
-                      fontSize: 24,
+                      color: const Color(0xFF090F24),
+                      fontSize: screenSize.width * 0.07,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w700,
                       height: 0.05,
@@ -45,18 +51,18 @@ class LogInPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: screenSize.height * 0.05,
             ),
             CustomTextFormField(
-              labelText: 'User Name',
+              labelText: 'Email',
               prefixIcon: SvgPicture.asset(
-                'assets/icons_svg/user.svg',
+                'assets/icons_svg/email.svg',
                 fit: BoxFit.none,
               ),
             ),
-            const SizedBox(
-              height: 24,
+            SizedBox(
+              height: screenSize.height * 0.03,
             ),
             CustomTextFormField(
               labelText: 'Password',
@@ -65,19 +71,20 @@ class LogInPage extends StatelessWidget {
                 fit: BoxFit.none,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: screenSize.width * 0.04),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      CustomCheckBox(),
+                      const CustomCheckBox(),
                       Text(
                         'Remember Password',
                         style: TextStyle(
-                          color: Color(0xFF313131),
-                          fontSize: 12,
+                          color: const Color(0xFF313131),
+                          fontSize: screenSize.width * 0.03,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w400,
                           height: 0.11,
@@ -88,8 +95,8 @@ class LogInPage extends StatelessWidget {
                   Text(
                     'Forget Password?',
                     style: TextStyle(
-                      color: Color(0xFF313131),
-                      fontSize: 10,
+                      color: const Color(0xFF313131),
+                      fontSize: screenSize.width * 0.025,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
                       height: 0.16,
@@ -98,67 +105,66 @@ class LogInPage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: screenSize.height * 0.03,
             ),
             Container(
               width: double.infinity,
               child: CustomButton(
-                onTap: () =>
-                    Navigator.pushNamed(context, selectPositionPage.id),
+                onTap: () => Navigator.pushNamed(context, BottomNavBar.id),
                 text: 'Log in',
                 color: kColor,
                 textColor: Colors.white,
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: screenSize.height * 0.05,
             ),
-            const Row(
+            Row(
               children: [
                 Expanded(
                   child: Divider(
-                    indent: 20,
-                    endIndent: 10,
-                    thickness: .7,
-                    color: Color(0xFF848484),
+                    indent: screenSize.width * 0.03,
+                    endIndent: screenSize.width * 0.015,
+                    thickness: 0.7,
+                    color: const Color(0xFF848484),
                   ),
                 ),
                 Text(
                   'Or login with',
                   style: TextStyle(
-                    color: Color(0xFF848484),
-                    fontSize: 15,
+                    color: const Color(0xFF848484),
+                    fontSize: screenSize.width * 0.0375,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Expanded(
                   child: Divider(
-                    thickness: .7,
-                    endIndent: 20,
-                    indent: 10,
-                    color: Color(0xFF848484),
+                    thickness: 0.7,
+                    endIndent: screenSize.width * 0.03,
+                    indent: screenSize.width * 0.015,
+                    color: const Color(0xFF848484),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 32,
+            SizedBox(
+              height: screenSize.height * 0.04,
             ),
             const LoginOptions(
               imagePath: 'assets/login_options_images/google.jpg',
               text: 'Log in using Google',
             ),
-            const SizedBox(
-              height: 16,
+            SizedBox(
+              height: screenSize.height * 0.02,
             ),
             const LoginOptions(
               imagePath: 'assets/login_options_images/Apple.jpg',
               text: 'Log in using Apple',
             ),
-            const SizedBox(
-              height: 65,
+            SizedBox(
+              height: screenSize.height * 0.03,
             ),
             NewRegistration(
               onTap: () {

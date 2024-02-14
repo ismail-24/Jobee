@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Apartment_Home_Icon_UIA" clip-path="url(#clip0_1028_102)">
+<path id="Vector" d="M13 16.5H11C10.17 16.5 9.5 17.17 9.5 18V21.5H14.5V18C14.5 17.17 13.83 16.5 13 16.5Z" stroke="#072AC8" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path id="Vector_2" d="M10.07 2.81985L3.14002 8.36985C2.36002 8.98985 1.86002 10.2998 2.03002 11.2798L3.36002 19.2398C3.60002 20.6598 4.96002 21.8098 6.40002 21.8098H17.6C19.03 21.8098 20.4 20.6498 20.64 19.2398L21.97 11.2798C22.13 10.2998 21.63 8.98985 20.86 8.36985L13.93 2.82985C12.86 1.96985 11.13 1.96985 10.07 2.81985Z" stroke="#072AC8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_1028_102">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

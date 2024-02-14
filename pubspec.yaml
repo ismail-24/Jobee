@@ -28,11 +28,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
   smooth_page_indicator: ^1.1.0
+  persistent_bottom_nav_bar: ^5.0.2 
+
+
+
 
 dev_dependencies:
   dotted_border: ^2.1.0
@@ -53,7 +57,13 @@ flutter:
     - assets/
     - assets/onboarding_images/
     - assets/icons_svg/
+    - assets/icons_svg/home_icons/
+    - assets/icons_svg/post_icons/
     - assets/login_options_images/
+    - assets/icons_svg/nav_bar_icons/
+    - assets/icons_svg/create_post_icons/
+    - assets/icons_svg/nav_bar_icons/home.svg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -77,5 +87,14 @@ flutter:
         - asset: fonts/Poppins-Medium.ttf
         - asset: fonts/Poppins-Regular.ttf
         - asset: fonts/Poppins-SemiBold.ttf
+
+    - family: Inter
+      fonts:
+        - asset: fonts/Inter/Inter-Regular.ttf
+        - asset: fonts/Inter/Inter-Medium.ttf
+        - asset: fonts/Inter/Inter-SemiBold.ttf
+        - asset: fonts/Inter/Inter-Bold.ttf
+        - asset: fonts/Inter/Inter-Thin.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

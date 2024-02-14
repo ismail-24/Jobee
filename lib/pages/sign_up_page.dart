@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/pages/login_page.dart';
+import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_text_form_field.dart';
 import 'package:jobee/widgets/new_registeration.dart';
@@ -12,28 +13,31 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 65,
+            SizedBox(
+              height: screenHeight * 0.1,
             ),
             Center(
               child: logo,
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: screenHeight * 0.08,
             ),
-            const Row(
+            Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
                   child: Text(
                     'Sign up now',
                     style: TextStyle(
                       color: Color(0xFF090F24),
-                      fontSize: 24,
+                      fontSize: screenWidth * 0.06,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w700,
                       height: 0.05,
@@ -42,8 +46,8 @@ class SignUpPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: screenHeight * 0.05,
             ),
             CustomTextFormField(
               labelText: 'User Name',
@@ -52,8 +56,8 @@ class SignUpPage extends StatelessWidget {
                 fit: BoxFit.none,
               ),
             ),
-            const SizedBox(
-              height: 24,
+            SizedBox(
+              height: screenHeight * 0.03,
             ),
             CustomTextFormField(
               labelText: 'E-mail',
@@ -62,8 +66,8 @@ class SignUpPage extends StatelessWidget {
                 fit: BoxFit.none,
               ),
             ),
-            const SizedBox(
-              height: 24,
+            SizedBox(
+              height: screenHeight * 0.03,
             ),
             CustomTextFormField(
               labelText: 'Password',
@@ -72,8 +76,8 @@ class SignUpPage extends StatelessWidget {
                 fit: BoxFit.none,
               ),
             ),
-            const SizedBox(
-              height: 24,
+            SizedBox(
+              height: screenHeight * 0.03,
             ),
             CustomTextFormField(
               labelText: 'Confirm Password',
@@ -82,26 +86,27 @@ class SignUpPage extends StatelessWidget {
                 fit: BoxFit.none,
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: screenHeight * 0.05,
             ),
             Container(
               width: double.infinity,
               child: CustomButton(
-                onTap: () => Navigator.pushNamed(context, LogInPage.id),
+                onTap: () =>
+                    Navigator.pushNamed(context, selectPositionPage.id),
                 text: 'Sign Up',
                 color: kColor,
                 textColor: Colors.white,
               ),
             ),
-            const SizedBox(
-              height: 130,
+            SizedBox(
+              height: screenHeight * 0.1,
             ),
             NewRegistration(
               onTap: () {
-                Navigator.pushNamed(context, LogInPage.id);
+                Navigator.pop(context);
               },
-              question: 'have an account already? ',
+              question: 'Already have an account? ',
               solution: 'Login',
             ),
           ],
