@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/pages/junior_info/junior_info_page1.dart';
-import 'package:jobee/widgets/custom_button.dart';
+import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/position_choises.dart';
 
 class selectPositionPage extends StatelessWidget {

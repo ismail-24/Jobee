@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobee/pages/chats_list_page.dart';
-import 'package:jobee/pages/community_page.dart';
+import 'package:jobee/pages/chat_pages/chats_list_page.dart';
 import 'package:jobee/pages/notifications_page.dart';
 
 class AppBarComponent extends StatelessWidget {
@@ -29,10 +28,9 @@ class AppBarComponent extends StatelessWidget {
           width: 10,
         ),
         GestureDetector(
-          onTap: () => Navigator.pushNamed(context, CommunityPage.id),
+          onTap: () {},
           child: SvgPicture.asset(
             'assets/icons_svg/home_icons/community.svg',
-            color: const Color(0xff848484),
           ),
         ),
         const SizedBox(

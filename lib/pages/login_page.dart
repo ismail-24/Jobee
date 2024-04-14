@@ -86,8 +86,8 @@ class LogInPage extends StatelessWidget {
                       height: screenSize.height * 0.05,
                     ),
                     CustomTextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
+                      validator: (data) {
+                        if (data == null || data.isEmpty) {
                           return 'Please enter your email';
                         }
                       },
@@ -105,7 +105,7 @@ class LogInPage extends StatelessWidget {
                     ),
                     CustomTextFormField(
                       validator: (data) {
-                        if (data!.isEmpty) {
+                        if (data == null || data.isEmpty) {
                           return 'Please enter your password';
                         }
                       },

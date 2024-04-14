@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/pages/community_page.dart';
-import 'package:jobee/widgets/custom_button.dart';
-import 'package:jobee/widgets/custom_text_form_field.dart';
+import 'package:jobee/widgets/custom_widgets/custom_button.dart';
+import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 import 'package:jobee/widgets/upload_cv.dart';
 
 class JuniorInfoPage2 extends StatelessWidget {

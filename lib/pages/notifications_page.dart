@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobee/widgets/notification_template.dart';
+import '../widgets/custom_widgets/custom_back_button.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -11,10 +12,7 @@ class NotificationPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         scrolledUnderElevation: 0,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: Image.asset('assets/icons_svg/create_post_icons/back.png'),
-        ),
+        leading: CustomBackButton(),
         title: const Center(
           child: Text(
             'Notifications',

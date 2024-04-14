@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/pages/junior_info/junior_info_page2.dart';
-import 'package:jobee/widgets/custom_button.dart';
-import 'package:jobee/widgets/custom_text_form_field.dart';
+import 'package:jobee/widgets/custom_widgets/custom_button.dart';
+import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 
 class JuniorInfoPage1 extends StatelessWidget {
   const JuniorInfoPage1({super.key});

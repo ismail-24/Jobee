@@ -45,6 +45,7 @@ class _PostTempletState extends State<PostTemplet> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
+      margin: EdgeInsets.only(top: 8),
       decoration: const BoxDecoration(
         color: Color(0x33E6EAFA),
         borderRadius: BorderRadius.all(

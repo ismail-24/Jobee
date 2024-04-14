@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
   static String id = 'HomePage';
   List posts = [
-    CustomSearchBar(),
+    const CustomSearchBar(),
     PostTemplet(),
   ];
   @override
