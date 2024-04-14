@@ -32,3 +32,7 @@ const List pages = [
 const Color kColor = Color(0xFF072AC8);
 var logo =
     Container(width: 250, height: 90, child: Image.asset('assets/splash.png'));
+
+const kMessage = 'message';
+const kMessagesCollection = 'messages';
+const kCreatedAt = 'createdAt';
