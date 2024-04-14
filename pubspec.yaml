@@ -28,21 +28,24 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cloud_firestore: ^4.16.0
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^4.19.0
+  firebase_core: ^2.28.0
+  flutter_bloc: ^8.1.5
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
+  getwidget: ^4.0.0
+  persistent_bottom_nav_bar: ^5.0.2
   smooth_page_indicator: ^1.1.0
-  persistent_bottom_nav_bar: ^5.0.2 
-
-
-
 
 dev_dependencies:
   dotted_border: ^2.1.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  modal_progress_hud_nsn: ^0.5.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,7 +66,8 @@ flutter:
     - assets/icons_svg/nav_bar_icons/
     - assets/icons_svg/create_post_icons/
     - assets/icons_svg/nav_bar_icons/home.svg
-    
+    - assets/courses_images/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -95,6 +99,5 @@ flutter:
         - asset: fonts/Inter/Inter-SemiBold.ttf
         - asset: fonts/Inter/Inter-Bold.ttf
         - asset: fonts/Inter/Inter-Thin.ttf
-
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
