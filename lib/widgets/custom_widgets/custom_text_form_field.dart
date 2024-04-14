@@ -9,12 +9,16 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.suffix,
     this.height,
+    this.validator,
+    this.obscureText = false,
   });
   final Function(String)? onChange;
   final String? labelText;
   final Widget? prefixIcon;
   final Widget? suffix;
   final double? height;
+  String? Function(String?)? validator;
+  bool? obscureText;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,6 +26,8 @@ class CustomTextFormField extends StatelessWidget {
       child: Container(
         height: height ?? 65,
         child: TextFormField(
+          obscureText: obscureText!,
+          validator: validator,
           maxLines: 50,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           cursorColor: kColor,
@@ -49,6 +55,14 @@ class CustomTextFormField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: kColor),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Colors.red),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Colors.red),
             ),
           ),
         ),
