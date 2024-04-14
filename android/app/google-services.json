@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704426176494",
+    "project_id": "jobee-24",
+    "storage_bucket": "jobee-24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704426176494:android:090186e736964c632168ff",
+        "android_client_info": {
+          "package_name": "com.example.jobee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKmLxvqmuX53kcdwNtrYkrX8Hq04eUNSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
