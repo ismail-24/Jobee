@@ -7,39 +7,9 @@ class ChatsListPage extends StatelessWidget {
   ChatsListPage({super.key});
   static String id = 'ChatsList';
 
-  List<Widget> chatsList = const [
-    CustomSearchBar(),
+  List<Widget> chatsList = [
+    const CustomSearchBar(),
     ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile(),
-    ChatTile()
   ];
   @override
   Widget build(BuildContext context) {

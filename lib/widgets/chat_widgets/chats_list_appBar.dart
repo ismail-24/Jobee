@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobee/pages/chats_list_page.dart';
+import 'package:jobee/constant.dart';
+import 'package:jobee/pages/chat_pages/chats_list_page.dart';
 import 'package:jobee/pages/notifications_page.dart';
 
 class ChatsListAppBar extends StatelessWidget {
@@ -26,9 +27,10 @@ class ChatsListAppBar extends StatelessWidget {
         Row(
           children: [
             GestureDetector(
-                onTap: () => Navigator.pushNamed(context, NotificationPage.id),
-                child: SvgPicture.asset(
-                    'assets/icons_svg/home_icons/notification.svg')),
+              onTap: () => Navigator.pushNamed(context, NotificationPage.id),
+              child: SvgPicture.asset(
+                  'assets/icons_svg/home_icons/notification.svg'),
+            ),
             const SizedBox(
               width: 10,
             ),
@@ -43,14 +45,17 @@ class ChatsListAppBar extends StatelessWidget {
               width: 10,
             ),
             GestureDetector(
-                onTap: () => Navigator.of(context, rootNavigator: true).push(
-                      PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) =>
-                            ChatsListPage(),
-                      ),
-                    ),
-                child: SvgPicture.asset(
-                    'assets/icons_svg/home_icons/message.svg')),
+              onTap: () => Navigator.of(context, rootNavigator: true).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      ChatsListPage(),
+                ),
+              ),
+              child: SvgPicture.asset(
+                'assets/icons_svg/home_icons/message.svg',
+                color: kColor,
+              ),
+            ),
           ],
         ),
       ],
