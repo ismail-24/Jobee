@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobee/pages/chat_pages/chat_page.dart';
+import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
@@ -8,7 +8,6 @@ import 'package:jobee/cubits/chat_cubit/chat_cubit.dart';
 import 'package:jobee/cubits/login_cubit/login_cubit.dart';
 import 'package:jobee/helper/show_snack_bar.dart';
 import 'package:jobee/pages/register_page.dart';
-import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_widgets/custom_check_box.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
@@ -22,7 +21,6 @@ class LogInPage extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? email, password;
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -33,7 +31,7 @@ class LogInPage extends StatelessWidget {
           isLoading = true;
         } else if (state is LoginSuccess) {
           BlocProvider.of<ChatCubit>(context).getMessages();
-          Navigator.pushNamed(context, ChatPage.id, arguments: email);
+          Navigator.pushNamed(context, BottomNavBar.id, arguments: email);
           isLoading = false;
         } else if (state is LoginFailure) {
           showSnackBar(context, state.errMessage);
@@ -42,7 +40,7 @@ class LogInPage extends StatelessWidget {
       },
       builder: (context, state) {
         return ModalProgressHUD(
-          progressIndicator: CircularProgressIndicator(
+          progressIndicator: const CircularProgressIndicator(
             color: kColor,
           ),
           inAsyncCall: isLoading,
@@ -104,6 +102,8 @@ class LogInPage extends StatelessWidget {
                       height: screenSize.height * 0.03,
                     ),
                     CustomTextFormField(
+                      obscureText:
+                          BlocProvider.of<LoginCubit>(context).obscureTxt,
                       validator: (data) {
                         if (data == null || data.isEmpty) {
                           return 'Please enter your password';
@@ -116,6 +116,18 @@ class LogInPage extends StatelessWidget {
                       prefixIcon: SvgPicture.asset(
                         'assets/icons_svg/lock.svg',
                         fit: BoxFit.none,
+                      ),
+                      suffix: GestureDetector(
+                        child: SvgPicture.asset(
+                          BlocProvider.of<LoginCubit>(context).obscureTxt ==
+                                  true
+                              ? 'assets/icons_svg/eye-slash.svg'
+                              : 'assets/icons_svg/eye.svg',
+                          fit: BoxFit.none,
+                        ),
+                        onTap: () {
+                          BlocProvider.of<LoginCubit>(context).obscureText();
+                        },
                       ),
                     ),
                     Padding(

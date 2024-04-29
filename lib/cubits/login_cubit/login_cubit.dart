@@ -6,6 +6,7 @@ part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
+  bool obscureTxt = true;
 
   Future<void> loginUser(
       {required String email, required String password}) async {
@@ -24,5 +25,10 @@ class LoginCubit extends Cubit<LoginState> {
     } catch (e) {
       emit(LoginFailure(errMessage: 'login failed'));
     }
+  }
+
+  void obscureText() {
+    obscureTxt = !obscureTxt;
+    emit(ObscureText());
   }
 }

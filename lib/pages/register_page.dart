@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/cubits/register_cubit/register_cubit.dart';
 import 'package:jobee/helper/show_snack_bar.dart';
+import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
@@ -29,7 +30,7 @@ class RegisterPage extends StatelessWidget {
         if (state is RegisterLoading) {
           isLoading = true;
         } else if (state is RegisterSuccess) {
-          Navigator.pushNamed(context, BottomNavBar.id);
+          Navigator.pushNamed(context, SelectPositionPage.id);
           isLoading = false;
         } else if (state is RegisterFailure) {
           showSnackBar(context, state.errMessage);
@@ -84,6 +85,11 @@ class RegisterPage extends StatelessWidget {
                     height: screenHeight * 0.03,
                   ),
                   CustomTextFormField(
+                    validator: (data) {
+                      if (data == null || data.isEmpty) {
+                        return 'This Filed Is Required';
+                      }
+                    },
                     onChange: (data) {
                       email = data;
                     },
@@ -97,6 +103,11 @@ class RegisterPage extends StatelessWidget {
                     height: screenHeight * 0.03,
                   ),
                   CustomTextFormField(
+                    validator: (data) {
+                      if (data == null || data.isEmpty) {
+                        return 'This Filed Is Required';
+                      }
+                    },
                     onChange: (data) {
                       password = data;
                     },
