@@ -13,7 +13,7 @@ class ChatBuble extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.only(right: 47, left: 16, top: 8, bottom: 8),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(16),
@@ -43,7 +43,7 @@ class ChatBubleForFriend extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.only(right: 16, left: 47, top: 8, bottom: 8),
         decoration: BoxDecoration(
           border: Border.all(color: const Color(0xff072AC8)),
           borderRadius: const BorderRadius.only(

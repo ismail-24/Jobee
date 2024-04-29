@@ -23,8 +23,8 @@ class ChatsListPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: ListView.builder(
           itemCount: chatsList.length,
-          itemBuilder: (context, value) {
-            return chatsList[value];
+          itemBuilder: (context, index) {
+            return chatsList[index];
           },
         ),
       ),

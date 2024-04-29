@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:jobee/cubits/chat_cubit/chat_cubit.dart';
 import 'package:jobee/pages/chat_pages/chat_page.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobee/pages/login_page.dart';
 
 class ChatTile extends StatelessWidget {
   ChatTile({super.key});
-  String? email;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
           onTap: () {
-            BlocProvider.of<ChatCubit>(context).getMessages();
-            Navigator.pushNamed(context, ChatPage.id, arguments: email);
+            Navigator.pushNamed(context, ChatPage.id,
+                arguments: 'ismail@gmail.com');
           },
           child: ListTile(
             leading: CircleAvatar(

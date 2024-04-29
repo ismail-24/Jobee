@@ -51,21 +51,22 @@ class ChatPage extends StatelessWidget {
                   var messagesList =
                       BlocProvider.of<ChatCubit>(context).messagesList;
                   return ListView.builder(
-                      reverse: true,
-                      controller: scrollController,
-                      physics: const BouncingScrollPhysics(
-                        parent: AlwaysScrollableScrollPhysics(),
-                      ),
-                      itemCount: messagesList.length,
-                      itemBuilder: (context, index) {
-                        return messagesList[index].id == email
-                            ? ChatBuble(
-                                message: messagesList[index],
-                              )
-                            : ChatBubleForFriend(
-                                message: messagesList[index],
-                              );
-                      });
+                    reverse: true,
+                    controller: scrollController,
+                    physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics(),
+                    ),
+                    itemCount: messagesList.length,
+                    itemBuilder: (context, index) {
+                      return messagesList[index].id == email
+                          ? ChatBuble(
+                              message: messagesList[index],
+                            )
+                          : ChatBubleForFriend(
+                              message: messagesList[index],
+                            );
+                    },
+                  );
                 },
               ),
             ),
