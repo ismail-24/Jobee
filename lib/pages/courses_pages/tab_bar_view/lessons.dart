@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:jobee/widgets/courses_widgets/Lesson_tile.dart';
 
 class Lessons extends StatelessWidget {
@@ -14,7 +12,7 @@ class Lessons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: ListView.builder(
           itemCount: lessonsList.length,
           itemBuilder: (context, index) {

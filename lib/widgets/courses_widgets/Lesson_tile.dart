@@ -9,17 +9,24 @@ class LessonTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: ListTile(
-        tileColor: Color(0xFF090F24),
-        leading: const LessonNumber(),
-        trailing:
-            SvgPicture.asset('assets/icons_svg/courses_icons/play_video.svg'),
-        title: const Text(
-          'intorduction to UX',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 14,
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.w600,
+        tileColor: Color(0x33E6EAFA),
+        leading: LessonNumber(),
+        trailing: SvgPicture.asset(
+          'assets/icons_svg/courses_icons/play_video.svg',
+          width: 40,
+          height: 40,
+        ),
+        minVerticalPadding: 30,
+        title: const Padding(
+          padding: EdgeInsets.only(bottom: 12),
+          child: Text(
+            'intorduction to UX',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 14,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         subtitle: const Text(
@@ -40,32 +47,31 @@ class LessonTile extends StatelessWidget {
 }
 
 class LessonNumber extends StatelessWidget {
-  const LessonNumber({
+  LessonNumber({
     super.key,
     this.lessonNumber = 0,
   });
-  final int lessonNumber;
+  int lessonNumber;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 48,
-      height: 48,
+      width: 55,
+      height: 55,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: ShapeDecoration(
         color: const Color(0xFFE6EAFA),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(32),
         ),
       ),
       child: Center(
         child: Text(
-          '$lessonNumber',
+          '${lessonNumber++}', // increment lessonNumber each time widget is built
           style: const TextStyle(
             color: Color(0xFF072AC8),
-            fontSize: 16,
+            fontSize: 24,
             fontFamily: 'Montserrat',
             fontWeight: FontWeight.w600,
-            height: 0.12,
           ),
         ),
       ),

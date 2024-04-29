@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CourseInfoWidget extends StatelessWidget {
-  const CourseInfoWidget({
+class LessonInfo extends StatelessWidget {
+  const LessonInfo({
     super.key,
     required this.imagePath,
     required this.title,
