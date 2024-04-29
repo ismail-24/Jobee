@@ -3,6 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/widgets/post_widgets/comment_template.dart';
 import 'package:jobee/widgets/post_widgets/post_component.dart';
 
+class Comment {
+  final String userName;
+  final String commentText;
+
+  Comment({required this.userName, required this.commentText});
+}
+
 class PostTemplet extends StatefulWidget {
   PostTemplet({super.key});
 
@@ -12,7 +19,7 @@ class PostTemplet extends StatefulWidget {
 
 class _PostTempletState extends State<PostTemplet> {
   bool writeComment = false;
-  List<String> comments = [];
+  List<Comment> comments = [];
   TextEditingController? controller; // Declare the controller variable
 
   @override
@@ -36,7 +43,8 @@ class _PostTempletState extends State<PostTemplet> {
   void addComment() {
     if (controller!.text.isNotEmpty) {
       setState(() {
-        comments.add(controller!.text);
+        comments.add(
+            Comment(userName: 'Yahia ahmed', commentText: controller!.text));
       });
     }
   }
@@ -164,7 +172,7 @@ class _PostTempletState extends State<PostTemplet> {
             itemCount: comments.length,
             itemBuilder: (context, index) {
               return CommentTemplate(
-                comment: comments[index],
+                comment: comments[index].commentText,
               );
             },
           ),
