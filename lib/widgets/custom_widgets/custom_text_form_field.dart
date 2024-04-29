@@ -28,7 +28,6 @@ class CustomTextFormField extends StatelessWidget {
         child: TextFormField(
           obscureText: obscureText!,
           validator: validator,
-          maxLines: 50,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           cursorColor: kColor,
           onChanged: onChange,

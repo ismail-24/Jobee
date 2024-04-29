@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: MaterialButton(
         onPressed: onTap,
-        color: color,
+        color: kColor,
         textColor: textColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
