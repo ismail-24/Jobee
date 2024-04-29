@@ -1,35 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class choises extends StatefulWidget {
-  const choises({
+class Choices extends StatefulWidget {
+  const Choices({
     super.key,
     required this.imagePath,
     required this.text,
+    required this.onTap,
+    required this.color,
+    required this.backgroundColor,
+    required this.textColor,
+    required this.fontWeight,
   });
   final String imagePath;
   final String text;
-
+  final void Function()? onTap;
+  final Color color;
+  final Color backgroundColor;
+  final Color textColor;
+  final FontWeight? fontWeight;
   @override
-  State<choises> createState() => _choisesState();
+  State<Choices> createState() => _ChoicesState();
 }
 
-class _choisesState extends State<choises> {
-  String selectedChoice = '';
+class _ChoicesState extends State<Choices> {
+  int selectedButton = 0;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: widget.onTap,
       child: Column(
         children: [
           Container(
             width: 80,
             height: 80,
             decoration: ShapeDecoration(
-              color: selectedChoice == widget.text
-                  ? const Color(0xffE6EAFA)
-                  : Colors.white,
+              color: widget.backgroundColor,
               shape: const OvalBorder(),
               shadows: const [
                 BoxShadow(
@@ -42,9 +49,7 @@ class _choisesState extends State<choises> {
             child: Center(
               child: SvgPicture.asset(
                 widget.imagePath,
-                color: selectedChoice == widget.text
-                    ? const Color(0xff072AC8)
-                    : const Color(0xff848484),
+                color: widget.color,
               ),
             ),
           ),
@@ -54,14 +59,13 @@ class _choisesState extends State<choises> {
           Text(
             widget.text,
             style: TextStyle(
-              color: selectedChoice == widget.text
-                  ? const Color(0xFF090F24)
-                  : const Color(0xFF626262),
+              color: widget.textColor
+              // ? const Color(0xFF090F24)
+              // : const Color(0xFF626262),
+              ,
               fontSize: 12,
               fontFamily: 'Montserrat',
-              fontWeight: selectedChoice == widget.text
-                  ? FontWeight.w700
-                  : FontWeight.w500,
+              fontWeight: widget.fontWeight,
               height: 0,
             ),
           ),
