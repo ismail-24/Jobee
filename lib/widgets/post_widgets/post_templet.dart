@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/widgets/post_widgets/comment_template.dart';
 import 'package:jobee/widgets/post_widgets/post_component.dart';
+import 'package:jobee/widgets/post_widgets/profile_photo.dart';
 
 class Comment {
   final String userName;
@@ -66,13 +67,7 @@ class _PostTempletState extends State<PostTemplet> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                const CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 16,
-                  child: Image(
-                      image:
-                          AssetImage('assets/icons_svg/post_icons/Avatar.png')),
-                ),
+                ProfilePhoto(),
                 const Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Column(

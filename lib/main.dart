@@ -63,7 +63,7 @@ class Jobee extends StatelessWidget {
           CourseInformationPage.id: (context) => const CourseInformationPage(),
           ChatPage.id: (context) => ChatPage(),
         },
-        initialRoute: OnBoardingPage.id,
+        initialRoute: BottomNavBar.id,
       ),
     );
   }
