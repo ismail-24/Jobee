@@ -11,14 +11,35 @@ import 'package:jobee/pages/courses_pages/course_info_page.dart';
 import 'package:jobee/pages/courses_pages/my_courses_page.dart';
 import 'package:jobee/pages/craete_post_pages/create_post_page.dart';
 import 'package:jobee/pages/community_page.dart';
-import 'package:jobee/pages/junior_info/junior_info_page1.dart';
-import 'package:jobee/pages/junior_info/junior_info_page2.dart';
+import 'package:jobee/pages/register_pages/instructor_info/instructor_info1.dart';
+import 'package:jobee/pages/register_pages/instructor_info/instructor_info2.dart';
+import 'package:jobee/pages/register_pages/junior_info/junior_info_page1.dart';
+import 'package:jobee/pages/register_pages/junior_info/junior_info_page2.dart';
 import 'package:jobee/pages/login_page.dart';
 import 'package:jobee/pages/notifications_page.dart';
 import 'package:jobee/pages/onboarding_pages/onboarding_page.dart';
+import 'package:jobee/pages/register_pages/startUp_info/startUp_info.dart';
 import 'package:jobee/pages/select_position_page.dart';
+<<<<<<< Updated upstream
 import 'package:jobee/pages/register_page.dart';
 import 'package:jobee/pages/splash/splash_screen.dart';
+=======
+import 'package:jobee/pages/register_pages/register_page.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_1.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_2.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_3.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_4.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_5.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen_1.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen_2.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen_3.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen_4.dart';
+import 'package:jobee/profile/presentation/screens/create_cv_screen_5.dart';
+import 'package:jobee/profile/presentation/screens/edit_profile.dart';
+import 'package:jobee/profile/presentation/screens/job_saved.dart';
+>>>>>>> Stashed changes
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 
 void main() async {
@@ -49,12 +70,29 @@ class Jobee extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
+          CreateCVScreen.id: (context) => const CreateCVScreen(),
+          CreateCV1Screen.id: (context) => const CreateCV1Screen(),
+          CreateCV2Screen.id: (context) => const CreateCV2Screen(),
+          CreateCV3Screen.id: (context) => const CreateCV3Screen(),
+          CreateCV4Screen.id: (context) => const CreateCV4Screen(),
+          CreateCV5Screen.id: (context) => const CreateCV5Screen(),
+          CreateJobSaved.id: (context) => const CreateJobSaved(),
+          EditProfile.id: (context) => EditProfile(),
+          CreateQuizScreen.id: (context) => const CreateQuizScreen(),
+          CreateQuiz1Screen.id: (context) => const CreateQuiz1Screen(),
+          CreateQuiz2Screen.id: (context) => const CreateQuiz2Screen(),
+          CreateQuiz3Screen.id: (context) => const CreateQuiz3Screen(),
+          CreateQuiz4Screen.id: (context) => const CreateQuiz4Screen(),
+          CreateQuiz5Screen.id: (context) => const CreateQuiz5Screen(),
           OnBoardingPage.id: (context) => OnBoardingPage(),
           LogInPage.id: (context) => LogInPage(),
           RegisterPage.id: (context) => RegisterPage(),
           SelectPositionPage.id: (context) => SelectPositionPage(),
           JuniorInfoPage1.id: (context) => const JuniorInfoPage1(),
           JuniorInfoPage2.id: (context) => const JuniorInfoPage2(),
+          StartUpInfoPage.id: (context) => const StartUpInfoPage(),
+          InstructorInfoPage1.id: (context) => const InstructorInfoPage1(),
+          InstructorInfoPage2.id: (context) => const InstructorInfoPage2(),
           CommunityPage.id: (context) => const CommunityPage(),
           CreatePostPage.id: (context) => const CreatePostPage(),
           ChatsListPage.id: (context) => ChatsListPage(),
