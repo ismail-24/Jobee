@@ -7,7 +7,7 @@ import 'package:jobee/constant.dart';
 import 'package:jobee/cubits/chat_cubit/chat_cubit.dart';
 import 'package:jobee/cubits/login_cubit/login_cubit.dart';
 import 'package:jobee/helper/show_snack_bar.dart';
-import 'package:jobee/pages/register_page.dart';
+import 'package:jobee/pages/register_pages/register_page.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_widgets/custom_check_box.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';

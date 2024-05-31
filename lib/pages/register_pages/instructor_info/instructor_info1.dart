@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
-import 'package:jobee/pages/junior_info/junior_info_page2.dart';
+import 'package:jobee/pages/register_pages/instructor_info/instructor_info2.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
+import 'package:jobee/widgets/custom_widgets/custom_dropdown.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 
-class JuniorInfoPage1 extends StatelessWidget {
-  const JuniorInfoPage1({super.key});
-  static String id = 'JuniorInfo';
+class InstructorInfoPage1 extends StatelessWidget {
+  const InstructorInfoPage1({super.key});
+  static String id = 'InstructorInfo1';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class JuniorInfoPage1 extends StatelessWidget {
               height: 48,
             ),
             const Text(
-              'Junior / Student Data',
+              'Instractor Data',
               style: TextStyle(
                 color: Color(0xFF090F24),
                 fontSize: 20,
@@ -59,35 +59,7 @@ class JuniorInfoPage1 extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            CustomTextFormField(
-              labelText: 'Track',
-              suffix: DropdownButton(
-                icon: SvgPicture.asset('assets/icons_svg/arrow_drop.svg'),
-                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (value) {},
-              ),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomTextFormField(
-              labelText: 'Track Level',
-              suffix: DropdownButton(
-                icon: SvgPicture.asset('assets/icons_svg/arrow_drop.svg'),
-                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (value) {},
-              ),
-            ),
+            CustomDropdownButton(),
             const SizedBox(
               height: 32,
             ),
@@ -96,7 +68,7 @@ class JuniorInfoPage1 extends StatelessWidget {
               child: CustomButton(
                 text: 'Next Step',
                 onTap: () {
-                  Navigator.pushNamed(context, JuniorInfoPage2.id);
+                  Navigator.pushNamed(context, InstructorInfoPage2.id);
                 },
                 color: kColor,
                 textColor: Colors.white,
@@ -105,7 +77,7 @@ class JuniorInfoPage1 extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: CustomButton(
                 color: Colors.white,

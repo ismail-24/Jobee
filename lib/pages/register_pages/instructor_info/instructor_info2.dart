@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
-import 'package:jobee/pages/community_page.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
+import 'package:jobee/widgets/custom_widgets/custom_dropdown.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 import 'package:jobee/widgets/upload_cv.dart';
 
-class JuniorInfoPage2 extends StatelessWidget {
-  const JuniorInfoPage2({super.key});
-  static String id = 'NextStep';
+class InstructorInfoPage2 extends StatelessWidget {
+  const InstructorInfoPage2({super.key});
+  static String id = 'InstructorInfo2';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,14 +49,18 @@ class JuniorInfoPage2 extends StatelessWidget {
               height: 40,
             ),
             CustomTextFormField(
-              labelText: 'Experience Years',
+              labelText: 'E-mail',
             ),
             const SizedBox(
               height: 24,
             ),
             CustomTextFormField(
-              labelText: 'Military status',
+              labelText: 'Facebook link',
             ),
+            const SizedBox(
+              height: 24,
+            ),
+            CustomDropdownButton(),
             const SizedBox(
               height: 24,
             ),
@@ -64,10 +68,6 @@ class JuniorInfoPage2 extends StatelessWidget {
               height: 120,
               labelText: 'About you',
             ),
-            const SizedBox(
-              height: 24,
-            ),
-            UploadCv(),
             const SizedBox(
               height: 40,
             ),

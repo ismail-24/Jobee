@@ -12,7 +12,7 @@ class ChatTile extends StatelessWidget {
         GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, ChatPage.id,
-                arguments: 'ismail@gmail.com');
+                arguments: 'ismail2@gmail.com');
           },
           child: ListTile(
             leading: CircleAvatar(

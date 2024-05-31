@@ -70,6 +70,7 @@ flutter:
     - assets/icons_svg/nav_bar_icons/home.svg
     - assets/courses_images/
     - assets/icons_svg/courses_icons/
+    - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jobee/cubits/chat_cubit/chat_cubit.dart';
 import 'package:jobee/models/message_model.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
@@ -100,6 +101,10 @@ class ChatPage extends StatelessWidget {
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,
                 ),
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(
+                      RegExp(r'[\u0600-\u06FF\s]'))
+                ],
               ),
             )
           ],

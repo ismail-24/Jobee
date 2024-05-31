@@ -6,6 +6,7 @@ import 'package:jobee/pages/courses_pages/courses_page.dart';
 import 'package:jobee/pages/craete_post_pages/create_post_page.dart';
 import 'package:jobee/pages/home_page.dart';
 import 'package:jobee/pages/notifications_page.dart';
+import 'package:jobee/profile/presentation/screens/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -20,7 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomePage(),
     const NotificationPage(),
     const CoursesPage(),
-    ChatsListPage(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

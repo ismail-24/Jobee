@@ -11,7 +11,9 @@ class CustomTextFormField extends StatelessWidget {
     this.height,
     this.validator,
     this.obscureText = false,
+    this.keyboardType,
   });
+  final TextInputType? keyboardType;
   final Function(String)? onChange;
   final String? labelText;
   final Widget? prefixIcon;

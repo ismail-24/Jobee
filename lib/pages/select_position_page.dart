@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobee/constant.dart';
-import 'package:jobee/pages/junior_info/junior_info_page1.dart';
+import 'package:jobee/pages/register_pages/instructor_info/instructor_info1.dart';
+import 'package:jobee/pages/register_pages/junior_info/junior_info_page1.dart';
+import 'package:jobee/pages/register_pages/startUp_info/startUp_info.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/position_choises.dart';
 
@@ -128,10 +130,10 @@ class _SelectPositionPageState extends State<SelectPositionPage> {
                     Navigator.pushNamed(context, JuniorInfoPage1.id);
                     break;
                   case 2:
-                    Navigator.pushNamed(context, JuniorInfoPage1.id);
+                    Navigator.pushNamed(context, StartUpInfoPage.id);
                     break;
                   case 3:
-                    Navigator.pushNamed(context, JuniorInfoPage1.id);
+                    Navigator.pushNamed(context, InstructorInfoPage1.id);
                     break;
                   default:
                     ScaffoldMessenger.of(context).showSnackBar(

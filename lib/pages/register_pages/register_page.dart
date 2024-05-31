@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
 import 'package:jobee/cubits/register_cubit/register_cubit.dart';
 import 'package:jobee/helper/show_snack_bar.dart';
+import 'package:jobee/pages/register_pages/junior_info/junior_info_page1.dart';
 import 'package:jobee/pages/select_position_page.dart';
-import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
 import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 import 'package:jobee/widgets/new_registeration.dart';
@@ -27,15 +27,15 @@ class RegisterPage extends StatelessWidget {
 
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
-        if (state is RegisterLoading) {
-          isLoading = true;
-        } else if (state is RegisterSuccess) {
-          Navigator.pushNamed(context, SelectPositionPage.id);
-          isLoading = false;
-        } else if (state is RegisterFailure) {
-          showSnackBar(context, state.errMessage);
-          isLoading = false;
-        }
+        // if (state is RegisterLoading) {
+        //   isLoading = true;
+        // } else if (state is RegisterSuccess) {
+        //   Navigator.pushNamed(context, SelectPositionPage.id);
+        //   isLoading = false;
+        // } else if (state is RegisterFailure) {
+        //   showSnackBar(context, state.errMessage);
+        //   isLoading = false;
+        // }
       },
       builder: (context, state) {
         return Scaffold(
@@ -86,9 +86,9 @@ class RegisterPage extends StatelessWidget {
                   ),
                   CustomTextFormField(
                     validator: (data) {
-                      if (data == null || data.isEmpty) {
-                        return 'This Filed Is Required';
-                      }
+                      // if (data == null || data.isEmpty) {
+                      //   return 'This Filed Is Required';
+                      // }
                     },
                     onChange: (data) {
                       email = data;
@@ -104,9 +104,9 @@ class RegisterPage extends StatelessWidget {
                   ),
                   CustomTextFormField(
                     validator: (data) {
-                      if (data == null || data.isEmpty) {
-                        return 'This Filed Is Required';
-                      }
+                      // if (data == null || data.isEmpty) {
+                      //   return 'This Filed Is Required';
+                      // }
                     },
                     onChange: (data) {
                       password = data;
@@ -134,10 +134,11 @@ class RegisterPage extends StatelessWidget {
                     width: double.infinity,
                     child: CustomButton(
                       onTap: () async {
-                        if (formKey.currentState!.validate()) {
-                          BlocProvider.of<RegisterCubit>(context)
-                              .registerUser(email: email!, password: password!);
-                        } else {}
+                        // if (formKey.currentState!.validate()) {
+                        //   BlocProvider.of<RegisterCubit>(context)
+                        //       .registerUser(email: email!, password: password!);
+                        // } else {}
+                        Navigator.pushNamed(context, SelectPositionPage.id);
                       },
                       text: 'Sign Up',
                       color: kColor,
