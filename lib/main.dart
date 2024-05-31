@@ -22,12 +22,10 @@ import 'package:jobee/pages/register_pages/startUp_info/startUp_info.dart';
 import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/pages/splash/splash_page.dart';
 import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_1.dart';
+import 'package:jobee/profile/presentation/screens/quizzes/fetures/home/views/quiz_page.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'pages/register_pages/register_page.dart';
 import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen.dart';
-import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_2.dart';
-import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_3.dart';
-import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_4.dart';
 import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_5.dart';
 import 'profile/profile.dart';
 
@@ -69,10 +67,8 @@ class Jobee extends StatelessWidget {
           EditProfile.id: (context) => EditProfile(),
           CreateQuizScreen.id: (context) => const CreateQuizScreen(),
           CreateQuiz1Screen.id: (context) => const CreateQuiz1Screen(),
-          CreateQuiz2Screen.id: (context) => const CreateQuiz2Screen(),
-          CreateQuiz3Screen.id: (context) => const CreateQuiz3Screen(),
-          CreateQuiz4Screen.id: (context) => const CreateQuiz4Screen(),
           CreateQuiz5Screen.id: (context) => const CreateQuiz5Screen(),
+          QuizPage.id: (context) => QuizPage(),
           OnBoardingPage.id: (context) => OnBoardingPage(),
           LogInPage.id: (context) => LogInPage(),
           RegisterPage.id: (context) => RegisterPage(),
