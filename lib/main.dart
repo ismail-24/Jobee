@@ -20,27 +20,16 @@ import 'package:jobee/pages/notifications_page.dart';
 import 'package:jobee/pages/onboarding_pages/onboarding_page.dart';
 import 'package:jobee/pages/register_pages/startUp_info/startUp_info.dart';
 import 'package:jobee/pages/select_position_page.dart';
-<<<<<<< Updated upstream
-import 'package:jobee/pages/register_page.dart';
-import 'package:jobee/pages/splash/splash_screen.dart';
-=======
-import 'package:jobee/pages/register_pages/register_page.dart';
-import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen.dart';
+import 'package:jobee/pages/splash/splash_page.dart';
 import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_1.dart';
-import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_2.dart';
-import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_3.dart';
-import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_4.dart';
-import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_5.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen_1.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen_2.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen_3.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen_4.dart';
-import 'package:jobee/profile/presentation/screens/create_cv_screen_5.dart';
-import 'package:jobee/profile/presentation/screens/edit_profile.dart';
-import 'package:jobee/profile/presentation/screens/job_saved.dart';
->>>>>>> Stashed changes
 import 'package:jobee/widgets/bottom_nav_bar.dart';
+import 'pages/register_pages/register_page.dart';
+import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen.dart';
+import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_2.dart';
+import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_3.dart';
+import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_4.dart';
+import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_5.dart';
+import 'profile/profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
