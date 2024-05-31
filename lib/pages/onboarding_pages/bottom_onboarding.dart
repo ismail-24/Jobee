@@ -14,25 +14,27 @@ class BottomOnBoardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Row(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 36.0),
+          padding: EdgeInsets.only(top: screenSize.width * .07),
           child: SmoothPageIndicator(
             textDirection: TextDirection.ltr,
             controller: controller,
             count: 3,
-            effect: const ExpandingDotsEffect(
+            effect: ExpandingDotsEffect(
               dotColor: Color(0x33072AC8),
               activeDotColor: Color(0xFF072AC8),
-              dotHeight: 10,
-              dotWidth: 10,
-              spacing: 2,
+              dotHeight: screenSize.height * .012,
+              dotWidth: screenSize.width * .023,
+              spacing: screenSize.width * .005,
             ),
           ),
         ),
-        const SizedBox(
-          width: 240,
+        SizedBox(
+          width: screenSize.width * .6,
         ),
         GestureDetector(
           onTap: () {
@@ -46,9 +48,12 @@ class BottomOnBoardPage extends StatelessWidget {
             }
           },
           child: Container(
-            padding: const EdgeInsets.only(top: 11, left: 11),
-            width: 170,
-            height: 168,
+            padding: EdgeInsets.only(
+              top: screenSize.width * .02,
+              left: screenSize.width * .02,
+            ),
+            width: screenSize.width * .39,
+            height: screenSize.width * .4,
             decoration: const ShapeDecoration(
               shape: OvalBorder(
                 side: BorderSide(
@@ -59,21 +64,23 @@ class BottomOnBoardPage extends StatelessWidget {
               ),
             ),
             child: Container(
-              width: 161,
-              height: 171,
+              width: screenSize.width * .3,
+              height: screenSize.width * .35,
               decoration: const ShapeDecoration(
                 color: Color(0xFF072AC8),
                 shape: OvalBorder(),
               ),
-              padding: const EdgeInsets.only(top: 58, left: 35),
-              child: const Text(
+              padding: EdgeInsets.only(
+                top: screenSize.width * .14,
+                left: screenSize.width * .085,
+              ),
+              child: Text(
                 'Next',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: screenSize.width * .048,
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w600,
-                  height: 0,
                 ),
               ),
             ),

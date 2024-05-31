@@ -18,6 +18,7 @@ import 'package:jobee/pages/notifications_page.dart';
 import 'package:jobee/pages/onboarding_pages/onboarding_page.dart';
 import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/pages/register_page.dart';
+import 'package:jobee/pages/splash/splash_screen.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 
 void main() async {
@@ -62,8 +63,9 @@ class Jobee extends StatelessWidget {
           MyCoursesPage.id: (context) => const MyCoursesPage(),
           CourseInformationPage.id: (context) => const CourseInformationPage(),
           ChatPage.id: (context) => ChatPage(),
+          SplashPage.id: (context) => SplashPage(),
         },
-        initialRoute: BottomNavBar.id,
+        initialRoute: SplashPage.id,
       ),
     );
   }

@@ -10,42 +10,44 @@ class TopSplash extends StatelessWidget {
     required this.width,
   });
 
-  final double? height;
-  final double? width;
+  final double height;
+  final double width;
   final String imageName;
   final String mainText;
   final String secondaryText;
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Column(
       children: [
         const Spacer(
           flex: 1,
         ),
         Container(
-          height: 330,
-          width: 300,
+          height: screenSize.width * 0.79708,
+          width: screenSize.width * 0.7246,
           child: Image.asset(
             imageName,
-            width: width,
-            height: height,
+            width: screenSize.width * width,
+            height: screenSize.width * height,
           ),
         ),
         const Spacer(
           flex: 2,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.0386),
           child: Text(
             mainText,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.black,
-              fontSize: 22,
+              fontSize: screenSize.width * 0.053,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w800,
-              height: 2,
+              height: screenSize.width * 0.00483,
             ),
           ),
         ),
@@ -53,16 +55,16 @@ class TopSplash extends StatelessWidget {
           flex: 1,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.0386),
           child: Text(
             secondaryText,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color(0xFF737373),
-              fontSize: 16,
+              fontSize: screenSize.width * 0.0386,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w500,
-              height: 3,
+              height: screenSize.width * 0.00725,
             ),
           ),
         ),

@@ -7,7 +7,7 @@ class OnBoardingPage extends StatefulWidget {
   OnBoardingPage({
     super.key,
   });
-  static String id = 'SplashPage';
+  static String id = 'OnBoardingPage';
 
   @override
   State<OnBoardingPage> createState() => _OnBoardingPageState();
@@ -18,12 +18,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
-            size: 24,
+            size: screenSize.width * 0.0579,
           ),
           color: kColor,
           onPressed: () {
@@ -41,14 +43,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             onTap: () {
               Navigator.pushNamed(context, LogInPage.id);
             },
-            child: const Text(
+            child: Text(
               'Skip',
               style: TextStyle(
                 color: kColor,
-                fontSize: 18,
+                fontSize: screenSize.width * 0.0435,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,
-                height: 0,
               ),
             ),
           ),
@@ -65,8 +66,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             },
           ),
           Positioned(
-            top: 650,
-            left: 10,
+            top: screenSize.width * 1.57,
+            left: screenSize.width * .024,
             child: BottomOnBoardPage(controller: controller, pages: pages),
           )
         ],
