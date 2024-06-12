@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/components/progress_bar/gf_progress_bar.dart';
 import 'package:jobee/constant.dart';
+import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/quiz_result_page.dart';
 
+import '../../../../Tests & Quiz/create_quiz_screen_1.dart';
 import '../../../core/utils/app_text.dart';
 import '../../check_answer/views/widgets/custom_button.dart';
 import '../../views/widgets/result_dialog.dart';
@@ -115,18 +117,18 @@ class _Question1State extends State<QuizPage> {
         showDialog(
           context: context,
           builder: (cont) {
-            return ResultDialog(
+            return QuizResultPage(
               questions: questions,
               score: score,
               length: questions.length,
-              click: () {
+              onTap: () {
                 questionindex = 0;
                 score = 0;
                 questonsNumber = 1;
                 percentage = 0.25;
                 answerColor = const Color(0x33E6EAFA);
                 changeSelectedAnswerToNull();
-                Navigator.pop(context);
+                Navigator.pushNamed(context, CreateQuiz1Screen.id);
                 setState(() {});
               },
             );
@@ -207,8 +209,19 @@ class _Question1State extends State<QuizPage> {
                         borderRadius: BorderRadius.circular(8)),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      Radio(
+                        activeColor: kColor,
+                        value: answer,
+                        groupValue: questions[questionindex].selectedAnswer,
+                        onChanged: (x) {
+                          selectedAnswerIndex =
+                              questions[questionindex].answer.indexOf(x!);
+                          x = questions[questionindex].selectedAnswer = x;
+                          setState(() {});
+                        },
+                      ),
                       Text(
                         answer,
                         style: TextStyle(
@@ -220,17 +233,6 @@ class _Question1State extends State<QuizPage> {
                               : Colors.black,
                         ),
                       ),
-                      Radio(
-                        activeColor: kColor,
-                        value: answer,
-                        groupValue: questions[questionindex].selectedAnswer,
-                        onChanged: (x) {
-                          selectedAnswerIndex =
-                              questions[questionindex].answer.indexOf(x!);
-                          x = questions[questionindex].selectedAnswer = x;
-                          setState(() {});
-                        },
-                      )
                     ],
                   ),
                 );
@@ -246,7 +248,7 @@ class _Question1State extends State<QuizPage> {
                 },
                 text: Text(
                   questionindex == questions.length - 1
-                      ? AppTexts.send
+                      ? AppTexts.endTask
                       : AppTexts.next,
                   style: const TextStyle(
                     fontSize: 16,

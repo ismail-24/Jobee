@@ -26,7 +26,7 @@ import 'package:jobee/profile/presentation/screens/quizzes/fetures/home/views/qu
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'pages/register_pages/register_page.dart';
 import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen.dart';
-import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen_5.dart';
+import 'profile/presentation/screens/Tests & Quiz/quiz_result_page.dart';
 import 'profile/profile.dart';
 
 void main() async {
@@ -67,7 +67,7 @@ class Jobee extends StatelessWidget {
           EditProfile.id: (context) => EditProfile(),
           CreateQuizScreen.id: (context) => const CreateQuizScreen(),
           CreateQuiz1Screen.id: (context) => const CreateQuiz1Screen(),
-          CreateQuiz5Screen.id: (context) => const CreateQuiz5Screen(),
+          QuizResultPage.id: (context) => const QuizResultPage(),
           QuizPage.id: (context) => QuizPage(),
           OnBoardingPage.id: (context) => OnBoardingPage(),
           LogInPage.id: (context) => LogInPage(),
