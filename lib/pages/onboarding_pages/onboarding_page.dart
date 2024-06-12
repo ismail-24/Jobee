@@ -4,7 +4,7 @@ import 'package:jobee/pages/login_page.dart';
 import 'package:jobee/pages/onboarding_pages/bottom_onboarding.dart';
 
 class OnBoardingPage extends StatefulWidget {
-  OnBoardingPage({
+  const OnBoardingPage({
     super.key,
   });
   static String id = 'OnBoardingPage';
@@ -21,7 +21,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,

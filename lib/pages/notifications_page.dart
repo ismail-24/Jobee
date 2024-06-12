@@ -9,10 +9,12 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         scrolledUnderElevation: 0,
-        leading: CustomBackButton(),
+        leading: const CustomBackButton(),
         title: const Center(
           child: Text(
             'Notifications',
@@ -27,7 +29,7 @@ class NotificationPage extends StatelessWidget {
         itemCount: 20,
         itemBuilder: (context, index) {
           DateTime now = DateTime.now();
-          return NotificationTemplate();
+          return const NotificationTemplate();
         },
       ),
     );

@@ -15,116 +15,120 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Center(
-          child: SizedBox(
-            height: 100,
-            width: 100,
-            child: Stack(
-              alignment: Alignment.bottomRight,
-              children: [
-                Positioned.fill(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.redAccent),
-                      //TODO add image
-                      image: const DecorationImage(
-                        image: AssetImage(AssetsPath.profile1),
-                        alignment: Alignment.bottomRight,
+    return Container(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Center(
+            child: SizedBox(
+              height: 100,
+              width: 100,
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.redAccent),
+                        //TODO add image
+                        image: const DecorationImage(
+                          image: AssetImage(AssetsPath.profile1),
+                          alignment: Alignment.bottomRight,
+                        ),
                       ),
+                      alignment: Alignment.bottomRight,
+                      child: GestureDetector(
+                          onTap: () =>
+                              Navigator.pushNamed(context, EditProfile.id),
+                          child: CircleAvatar(
+                            child:
+                                SvgPicture.asset('assets/icons_svg/edit.svg'),
+                          )),
                     ),
-                    alignment: Alignment.bottomRight,
-                    child: GestureDetector(
-                        onTap: () =>
-                            Navigator.pushNamed(context, EditProfile.id),
-                        child: CircleAvatar(
-                          child: SvgPicture.asset('assets/icons_svg/edit.svg'),
-                        )),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        const Center(
-          child: Text(
-            'Abdallah Ahmed ',
-            style: TextStyle(
-                fontSize: 12,
+          const SizedBox(
+            height: 5,
+          ),
+          const Center(
+            child: Text(
+              'Abdallah Ahmed ',
+              style: TextStyle(
+                  fontSize: 12,
+                  height: 2,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Montserrat',
+                  color: Color(0xFF000000)),
+            ),
+          ),
+          // SizedBox(),
+          const Center(
+            child: Text(
+              'abdallahzikrallah@gmail.com ',
+              style: TextStyle(
+                color: Color(0xFF848484),
+                fontSize: 8,
                 height: 2,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w400,
                 fontFamily: 'Montserrat',
-                color: Color(0xFF000000)),
-          ),
-        ),
-        // SizedBox(),
-        const Center(
-          child: Text(
-            'abdallahzikrallah@gmail.com ',
-            style: TextStyle(
-              color: Color(0xFF848484),
-              fontSize: 8,
-              height: 2,
-              fontWeight: FontWeight.w400,
-              fontFamily: 'Montserrat',
+              ),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ProfileInfoWidget(
-              upTitle: 'Track Name',
-              bottomTitle: 'Flutter',
-            ),
-            ProfileInfoWidget(
-              upTitle: 'Tests Score ',
-              bottomTitle: '125',
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        CustomProfileListTile(
-          onTap: () => Navigator.pushNamed(context, MyCoursesPage.id),
-          title: 'My Courses',
-          imagePAth: AssetsPath.coursesIcon,
-        ),
-        CustomProfileListTile(
-          title: 'My Cv',
-          imagePAth: AssetsPath.cvIcon,
-          onTap: () => Navigator.pushNamed(context, CreateCVScreen.id),
-        ),
-        CustomProfileListTile(
-          onTap: () => Navigator.pushNamed(context, CreateQuizScreen.id),
-          title: 'Tests & Quiz\'s',
-          imagePAth: AssetsPath.testIcon,
-        ),
-        const CustomProfileListTile(
-          title: 'Payment',
-          imagePAth: AssetsPath.dollarIcon,
-        ),
-        CustomProfileListTile(
-          title: 'Jop Saved',
-          imagePAth: AssetsPath.jobIcon,
-          onTap: () => Navigator.pushNamed(context, CreateJobSaved.id),
-        ),
-        const CustomProfileListTile(
-          title: 'App Setting',
-          imagePAth: AssetsPath.settingIcon,
-        ),
-      ],
+          const SizedBox(
+            height: 10,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ProfileInfoWidget(
+                upTitle: 'Track Name',
+                bottomTitle: 'Flutter',
+              ),
+              ProfileInfoWidget(
+                upTitle: 'Tests Score ',
+                bottomTitle: '125',
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          CustomProfileListTile(
+            onTap: () => Navigator.pushNamed(context, MyCoursesPage.id),
+            title: 'My Courses',
+            imagePAth: AssetsPath.coursesIcon,
+          ),
+          CustomProfileListTile(
+            title: 'My Cv',
+            imagePAth: AssetsPath.cvIcon,
+            onTap: () => Navigator.pushNamed(context, CreateCVScreen.id),
+          ),
+          CustomProfileListTile(
+            onTap: () => Navigator.pushNamed(context, CreateQuizScreen.id),
+            title: 'Tests & Quiz\'s',
+            imagePAth: AssetsPath.testIcon,
+          ),
+          const CustomProfileListTile(
+            title: 'Payment',
+            imagePAth: AssetsPath.dollarIcon,
+          ),
+          CustomProfileListTile(
+            title: 'Jop Saved',
+            imagePAth: AssetsPath.jobIcon,
+            onTap: () => Navigator.pushNamed(context, CreateJobSaved.id),
+          ),
+          const CustomProfileListTile(
+            title: 'App Setting',
+            imagePAth: AssetsPath.settingIcon,
+          ),
+        ],
+      ),
     );
   }
 }

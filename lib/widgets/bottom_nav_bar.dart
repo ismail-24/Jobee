@@ -43,11 +43,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: NavigationBar(
           selectedIndex: index,
           onDestinationSelected: (value) => setState(
-                () => this.index = value,
+                () => index = value,
               ),
           elevation: 0,
           indicatorColor: Colors.transparent,
-          overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+          backgroundColor: Colors.white,
           height: 70,
           destinations: [
             NavigationDestination(
