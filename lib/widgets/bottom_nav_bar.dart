@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobee/constant.dart';
+import 'package:jobee/pages/chat_pages/chat_page.dart';
 import 'package:jobee/pages/chat_pages/chats_list_page.dart';
 import 'package:jobee/pages/courses_pages/courses_page.dart';
 import 'package:jobee/pages/craete_post_pages/create_post_page.dart';
 import 'package:jobee/pages/home_page.dart';
+import 'package:jobee/pages/jobs_pages/job_page.dart';
 import 'package:jobee/pages/notifications_page.dart';
 import 'package:jobee/profile/presentation/screens/profile_screen.dart';
 
@@ -19,7 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   List pages = [
     HomePage(),
-    const NotificationPage(),
+    const JobsPage(),
     const CoursesPage(),
     const ProfileScreen(),
   ];

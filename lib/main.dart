@@ -15,6 +15,8 @@ import 'package:jobee/pages/courses_pages/course_info_page.dart';
 import 'package:jobee/pages/courses_pages/my_courses_page.dart';
 import 'package:jobee/pages/craete_post_pages/create_post_page.dart';
 import 'package:jobee/pages/community_page.dart';
+import 'package:jobee/pages/jobs_pages/categories_page.dart';
+import 'package:jobee/pages/jobs_pages/job_information.dart';
 import 'package:jobee/pages/register_pages/instructor_info/instructor_info1.dart';
 import 'package:jobee/pages/register_pages/instructor_info/instructor_info2.dart';
 import 'package:jobee/pages/register_pages/junior_info/junior_info_page1.dart';
@@ -36,15 +38,15 @@ import 'profile/profile.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Hive.initFlutter();
 
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(PostModelAdapter());
   await Hive.openBox<PostModel>(kPostsBox);
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
   runApp(const Jobee());
 }
 
@@ -101,6 +103,8 @@ class Jobee extends StatelessWidget {
           CourseInformationPage.id: (context) => const CourseInformationPage(),
           ChatPage.id: (context) => ChatPage(),
           SplashPage.id: (context) => SplashPage(),
+          CategriesPage.id: (context) => CategriesPage(),
+          JobInformationPage.id: (context) => JobInformationPage(),
         },
         initialRoute: SplashPage.id,
       ),

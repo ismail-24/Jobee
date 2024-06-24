@@ -74,6 +74,8 @@ flutter:
     - assets/courses_images/
     - assets/icons_svg/courses_icons/
     - assets/animations/
+    - assets/jobs_icons/card_icon/
+    - assets/jobs_icons/job_card/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobee/cubits/posts_cubits/posts_cubit/posts_cubit.dart';
 import 'package:jobee/models/posts_model/post_model.dart';
 import 'package:jobee/widgets/app_bar_component.dart';
+import 'package:jobee/widgets/chat_widgets/custom_search_bar.dart';
 import 'package:jobee/widgets/post_widgets/post_templet.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,8 +30,15 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const AppBarComponent(),
+            title: const Column(
+              children: [
+                AppBarComponent(),
+                SizedBox(height: 24),
+                CustomSearchBar()
+              ],
+            ),
             automaticallyImplyLeading: false,
+            toolbarHeight: 160,
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
