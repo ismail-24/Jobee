@@ -82,21 +82,30 @@ class ChatPage extends StatelessWidget {
               ),
               child: TextField(
                 controller: messageController,
-                onSubmitted: (data) {
-                  BlocProvider.of<ChatCubit>(context)
-                      .sendMessages(message: data, email: email);
-                  messageController.clear();
-                  scrollController.animateTo(
-                    0,
-                    duration: const Duration(microseconds: 300),
-                    curve: Curves.easeIn,
-                  );
-                },
-                decoration: const InputDecoration(
+                // onSubmitted: (data) {
+                //   BlocProvider.of<ChatCubit>(context)
+                //       .sendMessages(message: data, email: email);
+                //   messageController.clear();
+                //   scrollController.animateTo(
+                //     0,
+                //     duration: const Duration(microseconds: 300),
+                //     curve: Curves.easeIn,
+                //   );
+                // },
+                decoration: InputDecoration(
                   hintText: 'Send Message',
-                  suffixIcon: Icon(
-                    Icons.send_rounded,
-                    color: Color(0xff848484),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.send, color: Color(0xFF072AC8)),
+                    onPressed: () {
+                      BlocProvider.of<ChatCubit>(context).sendMessages(
+                          message: messageController.text, email: email);
+                      messageController.clear();
+                      scrollController.animateTo(
+                        0,
+                        duration: const Duration(microseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                    },
                   ),
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,

@@ -1,10 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:jobee/constant.dart';
 import 'package:jobee/cubits/chat_cubit/chat_cubit.dart';
 import 'package:jobee/cubits/login_cubit/login_cubit.dart';
+import 'package:jobee/cubits/posts_cubits/posts_cubit/posts_cubit.dart';
 import 'package:jobee/cubits/register_cubit/register_cubit.dart';
 import 'package:jobee/firebase_options.dart';
+import 'package:jobee/models/posts_model/post_model.dart';
 import 'package:jobee/pages/chat_pages/chat_page.dart';
 import 'package:jobee/pages/chat_pages/chats_list_page.dart';
 import 'package:jobee/pages/courses_pages/course_info_page.dart';
@@ -23,13 +27,20 @@ import 'package:jobee/pages/select_position_page.dart';
 import 'package:jobee/pages/splash/splash_page.dart';
 import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_1.dart';
 import 'package:jobee/profile/presentation/screens/quizzes/fetures/home/views/quiz_page.dart';
+import 'package:jobee/simple_bloc_observer.dart';
 import 'package:jobee/widgets/bottom_nav_bar.dart';
 import 'pages/register_pages/register_page.dart';
 import 'profile/presentation/screens/Tests & Quiz/create_quiz_screen.dart';
 import 'profile/presentation/screens/Tests & Quiz/quiz_result_page.dart';
 import 'profile/profile.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() async {
+  await Hive.initFlutter();
+
+  Bloc.observer = SimpleBlocObserver();
+  Hive.registerAdapter(PostModelAdapter());
+  await Hive.openBox<PostModel>(kPostsBox);
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -53,6 +64,9 @@ class Jobee extends StatelessWidget {
         BlocProvider(
           create: (context) => ChatCubit(),
         ),
+        BlocProvider(
+          create: (context) => PostsCubit(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -79,7 +93,7 @@ class Jobee extends StatelessWidget {
           InstructorInfoPage1.id: (context) => const InstructorInfoPage1(),
           InstructorInfoPage2.id: (context) => const InstructorInfoPage2(),
           CommunityPage.id: (context) => const CommunityPage(),
-          CreatePostPage.id: (context) => const CreatePostPage(),
+          CreatePostPage.id: (context) => CreatePostPage(),
           ChatsListPage.id: (context) => ChatsListPage(),
           NotificationPage.id: (context) => const NotificationPage(),
           BottomNavBar.id: (context) => const BottomNavBar(),

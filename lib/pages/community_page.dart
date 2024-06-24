@@ -15,7 +15,7 @@ class CommunityPage extends StatelessWidget {
         title: const AppBarComponent(),
         automaticallyImplyLeading: false,
       ),
-      body: PostTemplet(),
+      body: Text('data'),
       // Add other views/screens here based on the selected index
     );
   }

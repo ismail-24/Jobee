@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobee/models/posts_model/post_model.dart';
 import 'package:jobee/widgets/post_widgets/comment_template.dart';
 import 'package:jobee/widgets/post_widgets/post_component.dart';
 import 'package:jobee/widgets/post_widgets/profile_photo.dart';
 
-class Comment {
-  final String userName;
-  final String commentText;
-
-  Comment({required this.userName, required this.commentText});
-}
-
 class PostTemplet extends StatefulWidget {
-  PostTemplet({super.key});
+  PostTemplet({super.key, required this.post});
+  final PostModel post;
 
   @override
   State<PostTemplet> createState() => _PostTempletState();
@@ -20,15 +15,11 @@ class PostTemplet extends StatefulWidget {
 
 class _PostTempletState extends State<PostTemplet> {
   bool writeComment = false;
-  List<Comment> comments = [];
-  TextEditingController? controller; // Declare the controller variable
+  List<String> comments = [];
+  final controller = TextEditingController();
+  // Declare the controller variable
 
   @override
-  void initState() {
-    super.initState();
-    controller = TextEditingController(); // Initialize the controller
-  }
-
   void toggleWriteComment() {
     setState(() {
       writeComment = !writeComment;
@@ -36,25 +27,11 @@ class _PostTempletState extends State<PostTemplet> {
   }
 
   @override
-  void dispose() {
-    controller?.dispose(); // Dispose the controller when it's no longer needed
-    super.dispose();
-  }
-
-  void addComment() {
-    if (controller!.text.isNotEmpty) {
-      setState(() {
-        comments.add(
-            Comment(userName: 'Yahia ahmed', commentText: controller!.text));
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
-      margin: EdgeInsets.only(top: 8),
+      margin: const EdgeInsets.only(top: 8),
       decoration: const BoxDecoration(
         color: Color(0x33E6EAFA),
         borderRadius: BorderRadius.all(
@@ -67,13 +44,13 @@ class _PostTempletState extends State<PostTemplet> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                ProfilePhoto(),
-                const Padding(
-                  padding: EdgeInsets.only(left: 8),
+                const ProfilePhoto(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Yahia ahmed',
                         style: TextStyle(
                           color: Color(0xFF090F24),
@@ -83,8 +60,8 @@ class _PostTempletState extends State<PostTemplet> {
                         ),
                       ),
                       Text(
-                        '1 h',
-                        style: TextStyle(
+                        widget.post.date,
+                        style: const TextStyle(
                           color: Color(0xFF848484),
                           fontSize: 10,
                           fontFamily: 'Montserrat',
@@ -104,13 +81,18 @@ class _PostTempletState extends State<PostTemplet> {
           const SizedBox(
             height: 20,
           ),
-          const Text(
-            'On a first-time visit to New Orleans, there\'s so much to see and do.',
-            style: TextStyle(
-              color: Color(0xFF090F24),
-              fontSize: 10,
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w500,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              widget.post.title,
+              style: const TextStyle(
+                color: Color(0xFF090F24),
+                fontSize: 16,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                overflow: TextOverflow.ellipsis,
+              ),
+              maxLines: 3,
             ),
           ),
           const Divider(
@@ -136,8 +118,9 @@ class _PostTempletState extends State<PostTemplet> {
                   ),
                 ),
                 const PostComponent(
-                    assetPath: 'assets/icons_svg/post_icons/share.svg',
-                    title: 'Share'),
+                  assetPath: 'assets/icons_svg/post_icons/share.svg',
+                  title: 'Share',
+                ),
               ],
             ),
           ),
@@ -147,16 +130,25 @@ class _PostTempletState extends State<PostTemplet> {
               margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
               padding: const EdgeInsets.only(left: 8),
               color: Colors.white,
-              child: TextField(
+              child: TextFormField(
                 controller: controller,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Write a comment',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Color(0x7F848484),
                     fontSize: 12,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
+                  ),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.send, color: Color(0xFF072AC8)),
+                    onPressed: () {
+                      setState(() {
+                        comments.add(controller.text);
+                        controller.clear(); // Clear the TextField
+                      });
+                    },
                   ),
                 ),
               ),
@@ -167,13 +159,13 @@ class _PostTempletState extends State<PostTemplet> {
             itemCount: comments.length,
             itemBuilder: (context, index) {
               return CommentTemplate(
-                comment: comments[index].commentText,
+                comment: comments[index],
               );
             },
           ),
           Visibility(
-            visible: controller!.text.isNotEmpty,
-            child: CommentTemplate(comment: controller!.text),
+            visible: controller.text.isNotEmpty,
+            child: CommentTemplate(comment: controller.text),
           ),
         ],
       ),

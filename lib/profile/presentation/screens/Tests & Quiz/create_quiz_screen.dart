@@ -17,7 +17,20 @@ class CreateQuizScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar(context: context, title: "Tests & Quiz's"),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Center(
+            child: Text(
+          "Tests & Quiz's",
+          style: TextStyle(
+            color: Color(0xFF090F24),
+            fontSize: 18,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w600,
+          ),
+        )),
+        backgroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: Column(
           //  mainAxisAlignment: MainAxisAlignment.end,

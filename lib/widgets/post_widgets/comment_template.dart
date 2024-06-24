@@ -7,6 +7,7 @@ class CommentTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       height: 51,
       color: Colors.white,
       child: Row(
