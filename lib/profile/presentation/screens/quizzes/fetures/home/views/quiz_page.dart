@@ -68,18 +68,18 @@ class _Question1State extends State<QuizPage> {
   changeSelectedAnswerToNull() {
     for (int i = 0; i < questions.length; i++) {
       questions[i].selectedAnswer = null;
-      questions[i].answer.forEach((answer) {
+      for (var answer in questions[i].answer) {
         answerColor = const Color(0x33E6EAFA); // Reset answerColor to default
-      });
+      }
       selectedAnswerIndex = -1;
     }
   }
 
   changeSelectedAnswerColorToNull() {
     for (int i = 0; i < questions.length; i++) {
-      questions[i].answer.forEach((answer) {
+      for (var answer in questions[i].answer) {
         answerColor = const Color(0x33E6EAFA); // Reset answerColor to default
-      });
+      }
       selectedAnswerIndex = -1;
     }
   }
@@ -147,7 +147,9 @@ class _Question1State extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Center(
           child: Text('Test & Quizes'),
         ),
@@ -165,7 +167,7 @@ class _Question1State extends State<QuizPage> {
             const SizedBox(
               height: 16,
             ),
-            Container(
+            SizedBox(
               width: 390,
               child: GFProgressBar(
                 width: 350,

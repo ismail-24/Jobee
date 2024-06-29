@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jobee/core/core.dart';
-import 'package:jobee/core/widgets/my_app_bar.dart';
 import 'package:jobee/profile/presentation/screens/Tests%20&%20Quiz/create_quiz_screen_1.dart';
 
 import '../../../../constant.dart';
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
-import '../create_cv_screen_1.dart';
 
 class CreateQuizScreen extends StatelessWidget {
   const CreateQuizScreen({super.key});
@@ -19,7 +16,7 @@ class CreateQuizScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(
+        title: const Center(
             child: Text(
           "Tests & Quiz's",
           style: TextStyle(
@@ -80,20 +77,20 @@ class CreateQuizScreen extends StatelessWidget {
                   ),
                   items: const [
                     DropdownMenuItem(
-                      child: Text('UI UX'),
                       value: 'UIUX',
+                      child: Text('UI UX'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Flutter'),
                       value: 'Flutter',
+                      child: Text('Flutter'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Frontend'),
                       value: 'Frontend',
+                      child: Text('Frontend'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Backend'),
                       value: 'Backend',
+                      child: Text('Backend'),
                     ),
                   ],
                   onChanged: dropdowncallback),
@@ -116,20 +113,20 @@ class CreateQuizScreen extends StatelessWidget {
                   ),
                   items: const [
                     DropdownMenuItem(
-                      child: Text('Fresh'),
                       value: 'Fresh',
+                      child: Text('Fresh'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Junior'),
                       value: 'Junior',
+                      child: Text('Junior'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Middle'),
                       value: 'Middle',
+                      child: Text('Middle'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Senior'),
                       value: 'Senior',
+                      child: Text('Senior'),
                     ),
                   ],
                   onChanged: dropdowncallback),

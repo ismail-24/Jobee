@@ -23,6 +23,8 @@ class LogInPage extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? email, password;
+
+  LogInPage({super.key});
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -47,6 +49,7 @@ class LogInPage extends StatelessWidget {
           ),
           inAsyncCall: isLoading,
           child: Scaffold(
+            backgroundColor: Colors.white,
             body: Form(
               key: formKey,
               child: SingleChildScrollView(
@@ -90,6 +93,7 @@ class LogInPage extends StatelessWidget {
                         if (data == null || data.isEmpty) {
                           return 'Please enter your email';
                         }
+                        return null;
                       },
                       onChange: (data) {
                         email = data;
@@ -111,6 +115,7 @@ class LogInPage extends StatelessWidget {
                         if (data == null || data.isEmpty) {
                           return 'Please enter your password';
                         }
+                        return null;
                       },
                       onChange: (data) {
                         password = data;
@@ -170,7 +175,7 @@ class LogInPage extends StatelessWidget {
                     SizedBox(
                       height: screenSize.height * 0.03,
                     ),
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: CustomButton(
                         onTap: () async {
