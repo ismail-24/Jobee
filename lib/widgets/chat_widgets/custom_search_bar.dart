@@ -9,9 +9,12 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      height: 43,
-      margin: const EdgeInsets.only(bottom: 24),
+      height: screenHeight * 0.053,
+      margin: EdgeInsets.only(bottom: screenHeight * 0.029),
       child: TextField(
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(

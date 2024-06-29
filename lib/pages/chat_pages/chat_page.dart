@@ -110,10 +110,10 @@ class ChatPage extends StatelessWidget {
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,
                 ),
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(
-                      RegExp(r'[\u0600-\u06FF\s]'))
-                ],
+                // inputFormatters: [
+                //   FilteringTextInputFormatter.allow(
+                //       RegExp(r'[\u0600-\u06FF\s]'))
+                // ],
               ),
             )
           ],

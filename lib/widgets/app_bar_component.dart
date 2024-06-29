@@ -10,11 +10,12 @@ class AppBarComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Row(
       children: [
         Image.asset('assets/icons_svg/home_icons/logo.png'),
-        const SizedBox(
-          width: 170,
+        SizedBox(
+          width: screenWidth * 0.413194,
         ),
         GestureDetector(
             onTap: () => Navigator.of(context, rootNavigator: true).push(
@@ -24,8 +25,8 @@ class AppBarComponent extends StatelessWidget {
                 ),
             child: SvgPicture.asset(
                 'assets/icons_svg/home_icons/notification.svg')),
-        const SizedBox(
-          width: 10,
+        SizedBox(
+          width: screenWidth * .02430555556,
         ),
         GestureDetector(
           onTap: () {},
@@ -33,8 +34,8 @@ class AppBarComponent extends StatelessWidget {
             'assets/icons_svg/home_icons/community.svg',
           ),
         ),
-        const SizedBox(
-          width: 10,
+        SizedBox(
+          width: screenWidth * .02430555556,
         ),
         GestureDetector(
             onTap: () => Navigator.of(context, rootNavigator: true).push(

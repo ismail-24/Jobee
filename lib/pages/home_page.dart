@@ -22,6 +22,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return BlocBuilder<PostsCubit, PostsState>(
       builder: (context, state) {
         List<PostModel> posts =
@@ -30,18 +33,19 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const Column(
+            surfaceTintColor: Colors.white,
+            title: Column(
               children: [
                 AppBarComponent(),
-                SizedBox(height: 24),
+                SizedBox(height: screenHeight * 0.0279),
                 CustomSearchBar()
               ],
             ),
             automaticallyImplyLeading: false,
-            toolbarHeight: 160,
+            toolbarHeight: screenHeight * 0.1619,
           ),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.0389),
             child: ListView.builder(
               itemCount: posts.length,
               itemBuilder: (context, index) {

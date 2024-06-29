@@ -14,3 +14,5 @@ class RegisterFailure extends RegisterState {
 
   RegisterFailure({required this.errMessage});
 }
+
+class ObscureText extends RegisterState {}

@@ -27,7 +27,7 @@ class CreateCV1Screen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // const Expanded(child: SizedBox()),
-              Center(
+              const Center(
                 child: Text(
                   'Please Inform The Data ',
                   style: TextStyle(
@@ -38,29 +38,29 @@ class CreateCV1Screen extends StatelessWidget {
                       color: Color(0xFF000000)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               CustomTextFormField(
                 labelText: "name",
               ),
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 28,
               ),
               CustomTextFormField(
                 labelText: "phone",
                 keyboardType: TextInputType.phone,
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
                 labelText: "E-mail",
                 keyboardType: TextInputType.emailAddress,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
 
@@ -72,7 +72,7 @@ class CreateCV1Screen extends StatelessWidget {
                 padding: const EdgeInsets.all(15),
                 child: DropdownButtonFormField(
                     decoration: InputDecoration(
-                      label: Text("Location"),
+                      label: const Text("Location"),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: const BorderSide(
@@ -102,13 +102,13 @@ class CreateCV1Screen extends StatelessWidget {
                     onChanged: dropdowncallback),
               ),
 
-              Row(
+              const Row(
                 children: [
                   CustomCheckBox(),
                   Text('Auto Fill Data'),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
 

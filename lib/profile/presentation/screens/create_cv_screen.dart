@@ -11,25 +11,42 @@ class CreateCVScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar(context: context, title: 'Create CV'),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Create CV',
+            style: TextStyle(
+              fontSize: 20,
+              height: 2,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Montserrat',
+              color: Color(0xFF000000),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.white,
+      ),
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 25),
-            Center(
-                child: Text(
-              'Lets Create Your Cv Supported By Ai ',
-              style: TextStyle(
+            const SizedBox(height: 25),
+            const Center(
+              child: Text(
+                'Lets Create Your Cv Supported By Ai ',
+                style: TextStyle(
                   fontSize: 16,
                   height: 2,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Montserrat',
-                  color: Color(0xFF000000)),
-            )),
-            SizedBox(height: 7),
-            Center(
+                  color: Color(0xFF000000),
+                ),
+              ),
+            ),
+            const SizedBox(height: 7),
+            const Center(
               child: Text(
                 'Please Inform The Following Data  ',
                 style: TextStyle(
@@ -42,11 +59,11 @@ class CreateCVScreen extends StatelessWidget {
               ),
             ),
             Image.asset(AssetsPath.createCVAnimation),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             CustomButton(
               onTap: () => Navigator.pushNamed(context, CreateCV1Screen.id),
               text: 'Create Cv',
-              color: Color.fromRGBO(7, 42, 200, 1),
+              color: const Color.fromRGBO(7, 42, 200, 1),
               textColor: Colors.white,
             ),
           ],

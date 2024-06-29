@@ -14,6 +14,8 @@ import 'package:jobee/widgets/custom_widgets/custom_text_form_field.dart';
 import 'package:jobee/widgets/login_option.dart';
 import 'package:jobee/widgets/new_registeration.dart';
 
+String emails = '';
+
 class LogInPage extends StatelessWidget {
   static String id = 'LoginPage';
   bool isLoading = false;
@@ -91,6 +93,7 @@ class LogInPage extends StatelessWidget {
                       },
                       onChange: (data) {
                         email = data;
+                        emails = data;
                       },
                       labelText: 'Email',
                       prefixIcon: SvgPicture.asset(

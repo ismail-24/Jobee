@@ -3,10 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class PostComponent extends StatelessWidget {
   const PostComponent(
-      {super.key, required this.assetPath, required this.title});
+      {super.key,
+      required this.assetPath,
+      required this.title,
+      required this.numberOfComments});
 
-  final String assetPath;
-  final String title;
+  final String assetPath, title, numberOfComments;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,9 +34,9 @@ class PostComponent extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              const Text(
-                '110',
-                style: TextStyle(
+              Text(
+                numberOfComments,
+                style: const TextStyle(
                   color: Color(0xFF090F24),
                   fontSize: 10,
                   fontFamily: 'Inter',

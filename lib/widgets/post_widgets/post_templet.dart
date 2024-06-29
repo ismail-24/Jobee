@@ -17,7 +17,6 @@ class _PostTempletState extends State<PostTemplet> {
   bool writeComment = false;
   List<String> comments = [];
   final controller = TextEditingController();
-  // Declare the controller variable
 
   @override
   void toggleWriteComment() {
@@ -27,11 +26,13 @@ class _PostTempletState extends State<PostTemplet> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
+    final double screenHight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      margin: const EdgeInsets.only(top: 8),
+      padding: EdgeInsets.symmetric(vertical: screenHight * 0.0187),
+      margin: EdgeInsets.only(top: screenHight * 0.0093),
       decoration: const BoxDecoration(
         color: Color(0x33E6EAFA),
         borderRadius: BorderRadius.all(
@@ -41,12 +42,12 @@ class _PostTempletState extends State<PostTemplet> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.039),
             child: Row(
               children: [
                 const ProfilePhoto(),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8),
+                  padding: EdgeInsets.only(left: screenWidth * 0.0195),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -71,18 +72,18 @@ class _PostTempletState extends State<PostTemplet> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  width: 210,
+                SizedBox(
+                  width: screenWidth * 0.512,
                 ),
                 SvgPicture.asset('assets/icons_svg/post_icons/menu.svg')
               ],
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: screenHight * 0.0233,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.0244),
             child: Text(
               widget.post.title,
               style: const TextStyle(
@@ -100,26 +101,29 @@ class _PostTempletState extends State<PostTemplet> {
             thickness: .3,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.039),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const PostComponent(
                   assetPath: 'assets/icons_svg/post_icons/love.svg',
                   title: 'Likes',
+                  numberOfComments: '10',
                 ),
                 GestureDetector(
                   onTap: () {
                     toggleWriteComment();
                   },
-                  child: const PostComponent(
+                  child: PostComponent(
                     assetPath: 'assets/icons_svg/post_icons/comment.svg',
                     title: 'Comment',
+                    numberOfComments: '${comments.length}',
                   ),
                 ),
                 const PostComponent(
                   assetPath: 'assets/icons_svg/post_icons/share.svg',
                   title: 'Share',
+                  numberOfComments: '6',
                 ),
               ],
             ),
@@ -127,8 +131,11 @@ class _PostTempletState extends State<PostTemplet> {
           Visibility(
             visible: writeComment,
             child: Container(
-              margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
-              padding: const EdgeInsets.only(left: 8),
+              margin: EdgeInsets.only(
+                  left: screenWidth * 0.039,
+                  right: screenWidth * 0.039,
+                  bottom: screenHight * 0.0093),
+              padding: EdgeInsets.only(left: screenWidth * 0.0195),
               color: Colors.white,
               child: TextFormField(
                 controller: controller,
@@ -154,14 +161,17 @@ class _PostTempletState extends State<PostTemplet> {
               ),
             ),
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: comments.length,
-            itemBuilder: (context, index) {
-              return CommentTemplate(
-                comment: comments[index],
-              );
-            },
+          Visibility(
+            visible: writeComment,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: comments.length,
+              itemBuilder: (context, index) {
+                return CommentTemplate(
+                  comment: comments[index],
+                );
+              },
+            ),
           ),
           Visibility(
             visible: controller.text.isNotEmpty,

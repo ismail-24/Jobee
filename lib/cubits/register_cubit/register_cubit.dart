@@ -6,6 +6,7 @@ part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(RegisterInitial());
+  bool obscureTxt = true;
 
   Future<void> registerUser(
       {required String email, required String password}) async {
@@ -22,5 +23,10 @@ class RegisterCubit extends Cubit<RegisterState> {
     } catch (e) {
       emit(RegisterFailure(errMessage: 'Register Failed'));
     }
+  }
+
+  void obscureText() {
+    obscureTxt = !obscureTxt;
+    emit(ObscureText());
   }
 }

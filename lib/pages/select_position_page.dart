@@ -20,6 +20,7 @@ class _SelectPositionPageState extends State<SelectPositionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

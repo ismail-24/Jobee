@@ -89,7 +89,7 @@ class Jobee extends StatelessWidget {
           LogInPage.id: (context) => LogInPage(),
           RegisterPage.id: (context) => RegisterPage(),
           SelectPositionPage.id: (context) => SelectPositionPage(),
-          JuniorInfoPage1.id: (context) => const JuniorInfoPage1(),
+          JuniorInfoPage1.id: (context) => JuniorInfoPage1(),
           JuniorInfoPage2.id: (context) => const JuniorInfoPage2(),
           StartUpInfoPage.id: (context) => const StartUpInfoPage(),
           InstructorInfoPage1.id: (context) => const InstructorInfoPage1(),
