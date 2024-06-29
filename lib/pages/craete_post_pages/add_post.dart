@@ -6,7 +6,7 @@ import 'package:jobee/models/posts_model/post_model.dart';
 import 'package:intl/intl.dart';
 
 class AddPost extends StatefulWidget {
-  AddPost({super.key});
+  const AddPost({super.key});
 
   @override
   State<AddPost> createState() => _AddPostState();
@@ -23,7 +23,9 @@ class _AddPostState extends State<AddPost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

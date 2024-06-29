@@ -3,12 +3,11 @@ import 'package:jobee/constant.dart';
 import 'package:jobee/core/core.dart';
 
 import 'package:jobee/widgets/custom_widgets/custom_button.dart';
-import '../create_cv_screen_1.dart';
 import '../quizzes/fetures/home/models/question _model.dart';
-import 'create_quiz_screen_1.dart';
 
 class QuizResultPage extends StatelessWidget {
-  const QuizResultPage({this.score, this.length, this.onTap, this.questions});
+  const QuizResultPage(
+      {super.key, this.score, this.length, this.onTap, this.questions});
   static const String id = 'CreateQuiz5Screen';
 
   final int? score;
@@ -57,7 +56,7 @@ class QuizResultPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Your Score is ',
                 style: TextStyle(
                   fontSize: 20,
@@ -69,7 +68,7 @@ class QuizResultPage extends StatelessWidget {
               ),
               Text(
                 "$score/${length! * 10}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   height: 1.5,
                   fontWeight: FontWeight.w700,

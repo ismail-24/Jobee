@@ -14,7 +14,9 @@ class ChatsListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         scrolledUnderElevation: 0,
         title: const ChatsListAppBar(),

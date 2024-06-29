@@ -13,6 +13,8 @@ class ChatPage extends StatelessWidget {
   final scrollController = ScrollController();
 
   List<Message> messagesList = [];
+
+  ChatPage({super.key});
   @override
   Widget build(BuildContext context) {
     var email = ModalRoute.of(context)!.settings.arguments as String;
@@ -110,10 +112,13 @@ class ChatPage extends StatelessWidget {
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,
                 ),
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(
-                      RegExp(r'[\u0600-\u06FF\s]'))
-                ],
+                // inputFormatters: [
+                //   FilteringTextInputFormatter.allow(
+                //     RegExp(
+                //       r'[\u0600-\u06FF\s]',
+                //     ),
+                //   )
+                // ],
               ),
             )
           ],
